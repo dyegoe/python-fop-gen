@@ -8,6 +8,4 @@ Its generate a fop2.cfg and buttons.cfg based on a Jinja2 template.
 
 To auto generate the config, the script read the database and create a buttons with ALL extensions associated with a callgroup.
 
-Using the callgroup description, it generate a group admin.
-
-So, to create an admin to a group you need to put in the callgroup description something like this: `Group1 5555` where `5555` is the admin extension and it will be used `5555` as an interface user and twice for a password `55555555`.
+The script use the callgroup description to generate a group admin. So, to create an admin to a group you should put in the callgroup description something like this: `Group1 5555`. Where `5555` is the admin extension and it will be used as an interface user and twice for a password.
