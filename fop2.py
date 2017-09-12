@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-import MySQLdb
-import re
 import os
+import re
 import jinja2
+import MySQLdb
 
 # this is the final destination of fop2.cfg. Usually where you have been installed fop2
 fop2_file = 'fop2.cfg'
