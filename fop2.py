@@ -16,7 +16,7 @@ buttons_tpl = 'buttons-v2-cfg.tpl'
 
 
 def db_connect(db='snep'):
-    return MySQLdb.connect('127.0.0.1', 'root', 'sneppass', db)
+    return MySQLdb.connect('127.0.0.1', 'root', 'changeme', db)
 
 
 def db_disconnect(conn):
@@ -64,14 +64,14 @@ def render_file(template_path, context):
     path, filename = os.path.split(template_path)
     return jinja2.Environment(loader=jinja2.FileSystemLoader(path or './')).get_template(filename).render(context)
 
-
-context = dict()
-context['peers'] = snep_peers()
-context['groups'] = snep_groups(context['peers'])
-context['groups_desc'] = snep_groups_desc()
-
-with open(fop2_file, "w") as fop2_file_open:
-    fop2_file_open.write(render_file(fop2_tpl, context).encode('utf8'))
-
-with open(buttons_file, "w") as buttons_file_open:
-    buttons_file_open.write(render_file(buttons_tpl, context).encode('utf8'))
+print(snep_peers())
+# context = dict()
+# context['peers'] = snep_peers()
+# context['groups'] = snep_groups(context['peers'])
+# context['groups_desc'] = snep_groups_desc()
+#
+# with open(fop2_file, "w") as fop2_file_open:
+#     fop2_file_open.write(render_file(fop2_tpl, context).encode('utf8'))
+#
+# with open(buttons_file, "w") as buttons_file_open:
+#     buttons_file_open.write(render_file(buttons_tpl, context).encode('utf8'))
